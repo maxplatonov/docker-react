@@ -1,0 +1,9 @@
+sudo: required
+services:
+  - docker
+
+before_install:
+  - docker build -t maxplatonov/docker-react -f dev.Dockerfile .
+
+script:
+  - docker run maxplatonov/docker-react npm run test -- --coverage
