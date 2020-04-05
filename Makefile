@@ -7,6 +7,9 @@ build-prod:
 	docker build -f prod.Dockerfile .
 
 up:
+	docker-compose up --build
+
+up-d:
 	docker-compose up -d --build
 
 down:
