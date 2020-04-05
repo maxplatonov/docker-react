@@ -4,7 +4,7 @@ build-dev:
 	docker build -f dev.Dockerfile .
 
 build-prod:
-	docker build -f prod.Dockerfile .
+	docker build -f Dockerfile .
 
 up:
 	docker-compose up --build
