@@ -7,3 +7,16 @@ before_install:
 
 script:
   - docker run maxplatonov/docker-react npm run test -- --watchAll=false --coverage
+
+deploy:
+  provider: elasticbeanstalk
+  region: "eu-west-3"
+  app: "docker-react"
+  env: "DockerReact-env"
+  bucket_name: "elasticbeanstalk-eu-west-3-953935557417"
+  bucket_path: "docker-react"
+  on:
+    branch: master
+  access_key_id: "$AWS_BS_KEY_ID"
+  secret_access_key:
+    secure: "$AWS_BS_SECRET_KEY"
